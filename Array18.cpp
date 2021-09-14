@@ -45,15 +45,14 @@ void solve(){
     unordered_map<int,int> mp;
     for(ll i=0;i<n;i++){
         cin>>v[i];
+        mp[v[i]]++;
     }
-    int a = 0;
+    int c = 0;
     for(ll i=0; i<n ;i++){
-        if(mp[v[i]] == 0){
-            mp[v[i]]++;
-        }
-        
+        c+=mp[k-v[i]];
+        if(k-v[i]==v[i]) c--;
     }
-    cout<<a<<endl;
+    cout<<c/2<<endl;
 }
  
 int main()
