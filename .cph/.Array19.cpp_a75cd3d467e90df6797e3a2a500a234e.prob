@@ -1,0 +1,1 @@
+{"name":"Local: Array19","url":"d:\\C++\\450-Questions\\Array19.cpp","tests":[{"id":1631710401350,"input":"1\n6 5 8\n1 5 10 20 40 80\n6 7 20 80 100\n3 4 15 20 30 70 80 120","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\450-Questions\\Array19.cpp","group":"local","local":true}
