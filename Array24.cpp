@@ -38,25 +38,31 @@ ll gcd(ll a, string b){
     }
     return __gcd(a,res);
 }
-
 void solve(){
     ll n;cin>>n;
     vector<ll> v(n);
     for(ll i=0;i<n;i++){
         cin>>v[i];
     }
-    ll x,y,z,mx=v[0],mn=v[0],res=v[0];
-
-    for(ll i=1; i<n ;i++){
-        x=v[i];
-        y=mx*x;
-        z=mn*x;
-        mx=max(x,max(y,z));
-        mn=min(x,min(y,z));
-        res=max(res,max(mx,mn));
+    ll m=0,cnt=0,m1=0;
+    ll a,i;
+    ll h[100005] = {0};
+    for(ll i=0; i<n ;i++){
+        cin>>a;
+        h[a] = 1;
+        m1 = max(a,m1);
     }
-
-    cout<<res<<endl;
+    for(ll i=0; i<m1 ;i++){
+        if(h[i]==1){
+            cnt++;
+        }
+        else{
+            m=max(m,cnt);
+            cnt=0;
+        }
+    }
+    m=max(m,cnt);
+    cout<<m<<endl;
 }
  
 int main()
