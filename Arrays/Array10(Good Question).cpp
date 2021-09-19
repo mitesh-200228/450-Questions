@@ -66,7 +66,7 @@ void solve(){
     }cout<<endl;
     cout<<jump<<endl;
 }
- 
+
 int main()
 {
     ios_base::sync_with_stdio(false);

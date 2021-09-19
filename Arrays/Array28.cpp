@@ -38,36 +38,32 @@ ll gcd(ll a, string b){
     }
     return __gcd(a,res);
 }
-bool numberChecker(int x){
-    string s = to_string(x);
-    int len = s.length();
-    // cout<<len<<endl;
-    for(ll i=0; i<len/2 ;i++){
-        if(s[i]!=s[len-i-1]){
-            return false;
-        }
-    }
-
-    return true;
-}
 void solve(){
     ll n;cin>>n;
+    ll sum;cin>>sum;
     vector<ll> v(n);
     for(ll i=0;i<n;i++){
         cin>>v[i];
     }
-    int j=v.size()-1;
-    int i=0;
-    bool flag = true;
-    while(i<=j){
-        if(!numberChecker(v[i])){
-            cout<<"0"<<endl;
-            flag = false;
-            break;
+    ll l,r;
+    sort(v.begin(),v.end());
+    //O(n*n)
+    for(ll i=0; i<n - 2 ;i++){
+        l = i+1;
+        r = n-1;
+
+        while(l<r){
+            if(v[l] + v[r] + v[i] == sum){
+                cout<<v[l]<<" "<<v[i]<<" "<<v[r]<<" "<<endl;
+                break;
+            }
+            else if(v[i] + v[l] + v[r] < sum){
+                l++;
+            }else{
+                r--;
+            }
         }
-        i++;
     }
-    if(flag) cout<<"1"<<endl;
 }
  
 int main()
