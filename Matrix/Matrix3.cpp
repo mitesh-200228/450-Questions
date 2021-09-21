@@ -47,31 +47,28 @@ void solve(){
             cin>>v[i][j];
         }
     }
-    ll k,l;
-    k=0;
-    l=0;
-    while(k<n && l<m){
-        for(ll i=l;i<m;++i){
-            cout<<v[k][i]<<" ";
+    ll mn = INT_MAX,mx=INT_MIN;
+    for(ll i=0;i<n;i++){
+        mn=min(mn,v[i][0]);
+        mn=max(mx,v[i][m-1]);
+    }
+
+    int needed = (n*m + 1)/2;
+    int cnt = 0;
+    while(mn<mx)
+    {
+        int mid = mn + (mx-mn)/2;
+        for(int i=0;i<r;i++){
+            cnt+=upper_bound(v[i].begin(),v[i].end(),mid) - v[i].begin();
         }
-        k++;
-        for(ll i=k;i<n;++i){
-            cout<<v[i][m-1]<<" ";
-        }
-        m--;
-        if(k<n){
-            for(ll i=m-1;i>=l;--i){
-                cout<<v[n-1][i]<<" ";
-            }
-            m--;
-        }
-        if(l<m){
-            for(ll i=n-1; i>=k ;--i){
-                cout<<v[i][l]<<" ";
-            }
-            l++;
+
+        if(cnt<needed){
+            mn=mid+1;
+        }else{
+            mx=mid;
         }
     }
+    return min;
 }
  
 int main()

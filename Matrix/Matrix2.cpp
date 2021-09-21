@@ -41,37 +41,23 @@ ll gcd(ll a, string b){
 void solve(){
     ll n;cin>>n;
     ll m;cin>>m;
+    ll key;cin>>key;
     vector<vector<ll>> v(n,vector<ll> (m));
     for(ll i=0;i<n;i++){
         for(ll j=0;j<m;j++){
             cin>>v[i][j];
         }
-    }
-    ll k,l;
-    k=0;
-    l=0;
-    while(k<n && l<m){
-        for(ll i=l;i<m;++i){
-            cout<<v[k][i]<<" ";
-        }
-        k++;
-        for(ll i=k;i<n;++i){
-            cout<<v[i][m-1]<<" ";
-        }
-        m--;
-        if(k<n){
-            for(ll i=m-1;i>=l;--i){
-                cout<<v[n-1][i]<<" ";
-            }
-            m--;
-        }
-        if(l<m){
-            for(ll i=n-1; i>=k ;--i){
-                cout<<v[i][l]<<" ";
-            }
-            l++;
+    }bool flag = 0;
+    for (ll i = 0; i < v.size(); i++)
+    {
+        if(binary_search(v[i].begin(),v[i].end(),key)){
+            cout<<"YES"<<endl;
+            flag = 1;
+            break;
         }
     }
+    if(!flag) cout<<"NO"<<endl;
+    return;
 }
  
 int main()
