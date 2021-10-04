@@ -1,1 +1,0 @@
-{"name":"Local: Matrix2","url":"d:\\C++\\450-Questions\\Matrix\\Matrix2.cpp","tests":[{"id":1632215872165,"input":"1\n3 3 30\n1 2 3 \n4 5 6\n7 8 9","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\450-Questions\\Matrix\\Matrix2.cpp","group":"local","local":true}
